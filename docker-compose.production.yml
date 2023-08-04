@@ -12,7 +12,7 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
-    image: ilyac4t/kittygramm_backend
+    image: ilyac4t/kittygram_backend
     env_file: .env
     volumes:
       - static:/static/
@@ -24,7 +24,7 @@ services:
     volumes:
       - static:/static
   nginx:
-    image: ilyac4t/kittygram_nginx
+    image: ilyac4t/kittygram_gateway
     env_file: .env
     ports:
       - 9000:80
