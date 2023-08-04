@@ -50,5 +50,3 @@ server {
 
     server_tokens off;
 }
-
-
