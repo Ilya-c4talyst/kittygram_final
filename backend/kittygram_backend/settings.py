@@ -3,12 +3,14 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
+from django.core.management.utils import get_random_secret_key
+
 
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
+SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
@@ -99,7 +101,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'collected_static'
+STATIC_ROOT = '/static/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
